@@ -1,0 +1,10 @@
+References,Quantity,Value,Footprint,Description,Notes
+"U1, U2",2,74HC244,Package_SO:SOIC-20W_7.5x12.8mm_P1.27mm,"Octal bus buffer / line driver, non-inverting",SOIC-20 wide body; any 74HC244 or 74HCT244 works
+"C1, C2, C3, C4, C5",5,100nF,Capacitor_SMD:C_0805_2012Metric,"Chip capacitor, X7R ceramic",0805; 50V rating
+"C6, C7, C8, C9",4,10uF,Capacitor_SMD:C_0805_2012Metric,"Chip capacitor, X7R ceramic",0805; 50V rating
+J1,1,DB25 Male,Connector_Dsub:DSUB-25_Male_Horizontal_P2.77x2.84mm_EdgePinOffset4.94mm_Housed_MountingHolesOffset7.48mm,"D-sub 25-pin male, right-angle PCB mount",mates with Amstrad Expansion Connector A
+J2,1,DB37 Male,Connector_Dsub:DSUB-37_Male_Horizontal_P2.77x2.84mm_EdgePinOffset4.94mm_Housed_MountingHolesOffset7.48mm,"D-sub 37-pin male, right-angle PCB mount",mates with Amstrad Expansion Connector B
+"J3, J4, J5",3,ISA 8-bit slot,Connector:ISA_Slot_8bit_2x31_P2.54mm_Vertical,XT 8-bit ISA slot (62-pin card-edge socket),2x31 on 2.54 mm pitch; 5.08 mm between rows
+D1_PWR,1,LED_POWER,LED_SMD:LED_0805_2012Metric,Chip LED,0805; choose visible colour (green/red/amber)
+R101,1,470,Resistor_SMD:R_0805_2012Metric,Chip resistor,0805 (2012 metric); +/-1% or 5% is fine
+RR1,1,10k,Resistor_THT:R_Array_SIP9,9-pin SIP resistor network (8 bussed resistors),10K value; Bourns 4609X-101-103 or equivalent

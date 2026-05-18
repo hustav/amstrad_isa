@@ -1,0 +1,36 @@
+# --- KiCad ---------------------------------------------------------------
+# Per-user layout / view state (do not commit)
+*.kicad_prl
+
+# Backup files KiCad sprinkles next to the project
+*.bak
+*-bak/
+*-backups/
+*.kicad_pcb-bak
+*.kicad_sch-bak
+*.auto_saved_files*
+_autosave-*
+*.lck
+
+# KiCad editor history folder
+.history/
+
+# --- Fabrication outputs (regeneratable from the .kicad_pcb) -------------
+# Comment these out if you want to ship a release gerber set
+/fab/
+/gerbers-generated/
+**/Gerber/
+*.gbr
+*.drl
+*.pos
+*.rpt
+
+# --- Python --------------------------------------------------------------
+__pycache__/
+*.pyc
+
+# --- OS / editor cruft ---------------------------------------------------
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
