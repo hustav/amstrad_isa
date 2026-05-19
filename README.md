@@ -15,22 +15,12 @@ that clips onto the back of the machine via the two DB connectors — ready to
 host modern flash-based peripherals (XT-IDE, floppy emulators, network
 cards, etc.).
 
-## Status
-
-**Beta** — schematic, PCB and copper routing are all complete. Before you
-send the gerbers out you should still:
-
-1. Open the project in KiCad 8 and run **ERC** and **DRC**
-2. Eyeball the routing once more, especially around the connector pads
-3. Sanity-check fit against your actual PPC (the form factor is constrained
-   by the spacing between the DB25 and DB37 sockets)
-4. Generate gerbers and order
-
-The repo also ships with photos of a closely-related prior-art design (see
-[photos/](photos/)) so you can see what a finished, populated board looks
-like in-machine.
-
 ## Gallery
+
+The board has been fabricated and tested in a real Amstrad PPC 640 —
+booting DOS from a CompactFlash card via an XT-IDE controller. Photos
+below are of the assembled board in service.
+
 
 | | |
 |---|---|
@@ -57,6 +47,7 @@ amstrad_isa/
 │   ├── generate_schematic.py  — regenerates the schematic from tables
 │   ├── generate_pcb.py        — regenerates the PCB skeleton
 │   └── generate_bom.py        — emits docs/BOM.csv
+├── fab/                       — ready-to-order gerbers + JLCPCB zip
 ├── docs/
 │   ├── design_notes.md        — the *why* behind the schematic choices
 │   ├── BOM.csv                — bill of materials
@@ -64,10 +55,27 @@ amstrad_isa/
 └── photos/                    — build & in-machine reference shots
 ```
 
-## Quick start
+## I just want a board — no KiCad
+
+If you don't want to install KiCad, the [`fab/`](fab/) folder contains a
+ready-to-order gerber set straight from the committed `.kicad_pcb`.
+
+1. Download [`fab/ppc-isa-expansion-gerbers.zip`](fab/ppc-isa-expansion-gerbers.zip)
+   (no need to extract it).
+2. Go to your favourite board house — **JLCPCB**, **PCBWay**, **OSH Park**
+   and **Aisler** all accept this format unchanged.
+3. Upload the zip. The defaults are fine: 2 layers, 1.6 mm FR-4, HASL or
+   ENIG finish, any colour. Quantity 5 is usually the minimum and runs
+   ~$5 + shipping.
+4. Order, wait, populate from [`docs/BOM.csv`](docs/BOM.csv).
+
+The gerbers in `fab/` always match the committed `.kicad_pcb`. If you fork
+and re-route, re-plot from KiCad and replace the contents of `fab/`.
+
+## Build from source (with KiCad)
 
 ```bash
-git clone https://github.com/hustav/amstrad_isa.git
+git clone git@github.com:hustav/amstrad_isa.git
 cd amstrad_isa
 
 # Optional: regenerate the schematic / PCB from the Python source of truth

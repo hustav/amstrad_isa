@@ -15,15 +15,20 @@ _autosave-*
 # KiCad editor history folder
 .history/
 
-# --- Fabrication outputs (regeneratable from the .kicad_pcb) -------------
-# Comment these out if you want to ship a release gerber set
-/fab/
+# --- Fabrication outputs --------------------------------------------------
+# KiCad's plot dialog drops loose gerbers here — ignore by default.
 /gerbers-generated/
 **/Gerber/
 *.gbr
 *.drl
 *.pos
 *.rpt
+
+# ...BUT track the curated /fab/ release drop. That folder holds the
+# gerbers that match the committed PCB and is what people without KiCad
+# should use to order boards.
+!/fab/
+!/fab/**
 
 # --- Python --------------------------------------------------------------
 __pycache__/
